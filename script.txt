@@ -1,0 +1,4 @@
+#!/bin/bash
+apt update
+apt install -y apache2
+echo "Hello GCP Terraform" > /var/www/html/index.html
