@@ -30,7 +30,7 @@ resource "google_compute_instance" "default" {
     }
   }
 
-    metadata_startup_script = file("/root/gcp/script.txt")
+    metadata_startup_script = file("/root/gcp_set/script.txt")
 
     // Apply the firewall rule to allow external IPs to access this instance
     tags = ["http-server"]
