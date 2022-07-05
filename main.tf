@@ -1,13 +1,13 @@
+resource "google_compute_network" "custom-test" {
+  name                    = "new-vpc"
+  auto_create_subnetworks = false
+}
+
 resource "google_compute_subnetwork" "network-with-private-ip-ranges" {
   name          = "new-subnet"
   ip_cidr_range = "192.168.0.0/16"
   region        = "asia-northeast3"
   network       = google_compute_network.custom-test.id
-}
-
-resource "google_compute_network" "custom-test" {
-  name                    = "new-vpc"
-  auto_create_subnetworks = false
 }
 
 resource "google_compute_instance" "default" {
